@@ -1,0 +1,27 @@
+<h1>Listing monthlydata</h1>
+
+<table>
+  <tr>
+    <th>月日</th>
+    <th>項目</th>
+    <th>支出</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @monthlydata.each do |monthlydatum| %>
+  <tr>
+    <td><%= monthlydatum.date %></td>
+    <td><%= monthlydatum.item.name %></td>
+    <td><%= monthlydatum.value %></td>
+    <td><%= link_to 'Show', monthlydatum %></td>
+    <td><%= link_to 'Edit', edit_monthlydatum_path(monthlydatum) %></td>
+    <td><%= link_to 'Destroy', monthlydatum, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Monthlydatum', new_monthlydatum_path %>

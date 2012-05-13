@@ -1,0 +1,29 @@
+<%= form_for(@monthlydatum) do |f| %>
+  <% if @monthlydatum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@monthlydatum.errors.count, "error") %> prohibited this monthlydatum from being saved:</h2>
+
+      <ul>
+      <% @monthlydatum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.collection_select(:item_id, Item.find(:all), :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="filed">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, :discard_day => true%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
