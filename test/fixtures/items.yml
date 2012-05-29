@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: 食費
   estimate: 9.99
 
 two:
-  name: MyString
-  estimate: 9.99
+  name: 日用品
+  estimate: 19.99
+
+three:
+  name: 車関係費
+  estimate: 20.03

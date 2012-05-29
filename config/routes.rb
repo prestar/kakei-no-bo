@@ -1,4 +1,8 @@
 Houshold::Application.routes.draw do
+  get "status/months"
+
+  get "status/years"
+
   resources :monthlydata
 
   resources :items
